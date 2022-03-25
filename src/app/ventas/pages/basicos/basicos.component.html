@@ -1,1 +1,59 @@
-<p>basicos works!</p>
+
+<div class="text-layout">
+    <h1>Pipes Básicos</h1>
+    <p>Pipes incluidos en Angular - Uusalmente en el Common Module.</p>
+
+    <div class="grid">
+        <div class="col-4">
+            <p-card header="Uppercase"
+                    [subheader]="nombreLower | uppercase">
+                {{ nombreLower | uppercase }}
+            </p-card>
+        </div>
+        <div class="col-4">
+            <p-card header="Lowercase"
+                    subheader="{{ nombreUpper | lowercase }}">
+                {{ nombreUpper | lowercase }}
+            </p-card>
+        </div>
+        <div class="col-4">
+            <p-card header="Titlecase"
+                    [subheader]="nombreCompleto | titlecase">
+                {{ nombreCompleto | titlecase }}
+            </p-card>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="grid">
+        <div class="col-6">
+            <p-card>
+                <ul>
+                    <li>fecha</li>
+                    <li>fecha | date</li>
+                    <li>fecha | date:'short'</li>
+                    <li>fecha | date:'long'</li>
+                    <li>fecha | date:'full'</li>
+                </ul>
+            </p-card>
+        </div>
+        <div class="col-6">
+            <p-card>
+                <ul>
+                    <li>{{ fecha }}</li>
+                    <li>{{ fecha | date }}</li>
+                    <li>{{ fecha | date:'short' }}</li>
+                    <li>{{ fecha | date:'long' }}</li>
+                    <li>{{ fecha | date:'full' }}</li>
+                    <li>{{ fecha | date:'fullDate' }}, {{ fecha | date:'h:mm a' }}</li>
+                    <li>{{ fecha | date:'shortTime' }}</li>
+
+                    <!-- Como dato curioso esto hace que dejen de funcionar ciertos estilos 
+                        <li>{{ fecha | date:'bn' }}</li> -->
+                </ul>
+            </p-card>
+        </div>
+    </div>
+
+</div>
