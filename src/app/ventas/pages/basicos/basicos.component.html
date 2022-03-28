@@ -24,7 +24,12 @@
         </div>
     </div>
 
-    <br>
+    <div class="text-layout">
+        <h1>Date | Fecha | Pipe</h1>
+        <p>
+            Pipe para mostrar las fechas.
+        </p>
+    </div>
 
     <div class="grid">
         <div class="col-6">
@@ -35,6 +40,11 @@
                     <li>fecha | date:'short'</li>
                     <li>fecha | date:'long'</li>
                     <li>fecha | date:'full'</li>
+                </ul>
+
+                <hr>
+                <ul>
+                    <li>fech a | date:'long':'GMT-5'</li>
                 </ul>
             </p-card>
         </div>
@@ -51,6 +61,10 @@
 
                     <!-- Como dato curioso esto hace que dejen de funcionar ciertos estilos 
                         <li>{{ fecha | date:'bn' }}</li> -->
+                </ul>
+                <hr>
+                <ul>
+                    <li>{{ fecha | date:'long':'GMT-5'}}</li>
                 </ul>
             </p-card>
         </div>

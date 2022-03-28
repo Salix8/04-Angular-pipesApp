@@ -1,1 +1,63 @@
-<p>no-comunes works!</p>
+
+<div class="text-layout">
+    <h1>Pipes Básicos</h1>
+    <p>Pipes incluidos en Angular - Uusalmente en el Common Module.</p>
+
+    <div class="grid">
+        <div class="col md:col-6 lg:col-9">
+            <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+                <p>Saludos {{ nombre }}, es un placer {{ genero | i18nSelect:invitacionMapa  }} a nuestro evento.</p>
+                <p-button (onClick)="cambiarCliente()" label="Cambiar persona"></p-button>
+            </p-fieldset>
+        </div>
+
+        <div class="col md:col-6 lg:col-9">
+            <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+                <p>Actualmente tenemos {{ clientes.length | i18nPlural:clientesMapa }} cliente esperando.</p>
+
+                <!-- Se genera un doble botón en cuanto utilizamos la etiqueta y la directiva, sinembargo no deja aplicar todos los estilos en los dos tipos de botones por ejemplo las clases solo se plica en la parte del pButton (directiva) -->
+                <p-button pButton pRipple (click)="borrarCliente()" (onClick)="borrarCliente()" label="Borrar cliente" class="p-button-help"></p-button>
+                
+            </p-fieldset>
+        </div>
+
+        <div class="col md:col-6 lg:col-9">
+            <p-fieldset legend="Slice Pipe" [toggleable]="true">
+               <b>Original</b>
+               <pre>{{ clientes }}</pre>
+               <b>slice:0:2</b>
+               <pre>{{ clientes | slice:0:2}}</pre>
+               <b>slice:3:4</b>
+               <pre>{{ clientes | slice:3:4}}</pre>
+            </p-fieldset>
+        </div>
+
+        <div class="col md:col-6 lg:col-9">
+            <p-fieldset legend="KeyValue" [toggleable]="true">
+                <ul>
+                    <li *ngFor="let item of persona | keyvalue">
+                        <b>{{ item.key }}:</b> {{ item.value }}
+                    </li>
+                </ul>
+            </p-fieldset>
+        </div>
+
+        <div class="col md:col-6 lg:col-9">
+            <p-fieldset legend="JSON Pipe" [toggleable]="true">
+                <pre>{{ heroes | json }}</pre>
+            </p-fieldset>
+        </div>
+
+        <div class="col md:col-6 lg:col-9">
+            <p-fieldset legend="Async Pipe" [toggleable]="true">
+
+                <pre>{{ miObservable | async }}, {{ miObservable | async }}, {{ miObservable | async }}, {{ miObservable | async }}</pre>
+                <pre>{{ miObservable | async }}, {{ miObservable | async }}, {{ miObservable | async }}, {{ miObservable | async }}</pre>
+                <pre *ngIf="!(valorPromesa | async)">Resolviendo promesa</pre>
+                <pre>{{ valorPromesa | async }}</pre>
+            </p-fieldset>
+        </div>
+
+    </div>
+
+</div>
